@@ -3,7 +3,7 @@ name: Build Payment Service
 
 on:
   push:
-    branches: [master]
+    branches: [main]
   workflow_dispatch: # Cho phép trigger thủ công
 
 jobs:
@@ -22,7 +22,8 @@ jobs:
         run: mvn clean package -DskipTests
 
       - name: Upload JAR file
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4 # Cập nhật lên v4
         with:
           name: payment-jar
           path: target/*.jar
+          retention-days: 5 # Tùy chọn: giữ artifacts trong 5 ngày
