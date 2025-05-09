@@ -3,7 +3,7 @@ name: Build Payment Service
 
 on:
   push:
-    branches: [main]
+    branches: [master]
   workflow_dispatch: # Cho phép trigger thủ công
 
 jobs:
